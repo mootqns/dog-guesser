@@ -1,0 +1,79 @@
+/* Author: Matt Nguyen
+Course: CPSC332
+Assignment: Web Project Deliverable 2
+Last Modifed: 11.04.2022 */
+
+/* GAME CSS */
+
+body {
+    --blue: #124e78;
+    --orange: #d74e09;
+    --red: #6e0e0a;
+    --white: #f0f0c9;
+    --yellow: #f2bb05;
+
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.choice-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    font-size: 3rem;
+    min-width: 80rem;
+    background-color: var(--red);
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+.choice-prefix {
+    padding: 2rem 2.8rem;
+    color: var(--yellow);
+}
+
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background: red;
+}
+
+.display-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.display-main-text {
+    text-align: center;
+}
+
+#progress-bar {
+    border: 0.2rem solid var(--white);
+    width: 22rem;
+    height: 3rem;
+    margin-top: 3rem;
+    border-radius: 45px;
+    overflow: hidden;
+}
+
+#progress-bar-full {
+    height: 100%;
+    background: var(--orange);
+    width: 0%;
+}
+
+#display-bar {
+    display: flex;
+    justify-content: space-between;
+}

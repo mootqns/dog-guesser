@@ -1,3 +1,8 @@
+<!-- Author: Matt Nguyen
+Course: CPSC332
+Assignment: Web Project Deliverable 2
+Last Modifed: 11.04.2022 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +10,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./game.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+        crossorigin="anonymous">
+    </script>
+    <script src="./script.js"></script>
 </head>
 <body>
-    <!-- GAME HTML -->
-    <div id="game" class="center-justify flex-col">
-        <div id="display-bar">
-            <p id="game-progress">
-
-            </p>
-            <div id="progress-bar">
-                <div id="progress-bar-full">
-
+    <!-- GAME SCREEN -->
+    <div class="container">
+        <div id="game" class="center-justify flex-col">
+            <div id="display-bar">
+                <div class="display-item">
+                    <p class="display-prefix">
+                        Score
+                    </p>
+                    <h1 id="score" class="display-main-text">
+                        0
+                    </h1>
+                </div>
+                <div class="display-item">
+                    <p id="progress-text" class="display-prefix">
+                        Question
+                    </p>
+                    <div id="progress-bar">
+                        <div id="progress-bar-full"></div>
+                    </div>
                 </div>
             </div>
-            
+            <h1 id="question">
+                this is a question
+            </h1>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text">Choice text</p>
+            </div>
         </div>
     </div>
 </body>
