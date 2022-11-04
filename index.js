@@ -7,7 +7,8 @@
 
 window.onload = function() {
     const startBtn = document.getElementById("play-btn");
-
+    
+    // start-game button active
     startBtn.addEventListener("click", ()=>{
         window.location.assign('./game.html');
     });
