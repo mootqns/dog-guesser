@@ -1,0 +1,43 @@
+/* Author: Matt Nguyen
+Course: CPSC332
+Assignment: Web Project Deliverable 2
+Last Modifed: 11.04.2022 */
+
+.end-form-container {
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    border: 2 rem solid;
+}
+
+#username {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+#end-text {
+    text-align: center;
+    width: 200%;
+    font-size: 3.5rem;
+}
+
+#save-score-btn {
+    border: none;
+    width: 100%;
+    font-family: belleza;
+}
+
+.end-btn {
+    width: 100%;
+    text-decoration: none;
+}
