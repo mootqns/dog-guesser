@@ -24,7 +24,6 @@ window.onload = function() {
         score = 0;
         availibleQuestions = [...questions];
         getQuestion();
-
     }
 
     function getQuestion() {
@@ -117,7 +116,7 @@ window.onload = function() {
         }
     ]
 
-    const SCORE_POINTS = 999;
+    const SCORE_POINTS = 50;
     const MAX_QUESTIONS = 4;
 
     startGame();
