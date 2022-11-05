@@ -58,10 +58,17 @@ window.onload = function() {
             const selectedChoice = e.target;
             const selectedAnswer = selectedChoice.dataset['number'];
 
-            let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+            if(selectedAnswer == currentQuestion.answer) {
+                classToApply = 'correct';
+            }
+            else {
+                classToApply = 'incorrect';
+            }
             
-            if(classToApply === 'correct'){
-                 incrementScore(SCORE_POINTS);
+            // live score-updates
+            if(classToApply == 'correct'){
+                 score += SCORE_POINTS;
+                 scoreText.innerText = score;
             }
 
             selectedChoice.parentElement.classList.add(classToApply);
@@ -74,13 +81,7 @@ window.onload = function() {
 
         });
     });
-
-    // live-score updates
-    incrementScore = num => {
-        score += num;
-        scoreText.innerText = score;
-    }
-    
+  
     var questions = [
         {
             question: "1: What cat is the most popular in the U.S?",
