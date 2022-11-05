@@ -62,13 +62,13 @@ body {
     width: 22rem;
     height: 3rem;
     margin-top: 3rem;
-    border-radius: 45px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
 #progress-bar-full {
     height: 100%;
-    background: var(--orange);
+    background: green;
     width: 0%;
 }
 
