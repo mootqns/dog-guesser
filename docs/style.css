@@ -80,3 +80,9 @@ h2 {
 .btn[disabled]:hover {
     cursor: not-allowed;
 }
+
+.index-btns {
+    width: 100%;
+    border: none;
+    font-family: belleza;
+}
