@@ -10,6 +10,6 @@ window.onload = function() {
     
     // start-game button active
     startBtn.addEventListener("click", ()=>{
-        window.location.assign('./game.html');
+        window.location.assign('../game/game.html');
     });
 }

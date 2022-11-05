@@ -29,7 +29,7 @@ window.onload = function() {
     function getQuestion() {
         if(availibleQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
             localStorage.setItem("recentScore", score); 
-            return window.location.assign('./finish.html');
+            return window.location.assign('../finish/finish.html');
         }
 
         questionCounter++;
