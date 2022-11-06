@@ -58,12 +58,12 @@ window.onload = function() {
 
     // end settings js
 
-    let currentQuestion = {};
-    let acceptingAnswers = true;
     let score = 0;
     let questionCounter = 0;
     let availibleQuestions = [];
-
+    let currentQuestion = {};
+    let acceptingAnswers = true;
+    
     // inital startGame function
     function startGame() {
         questionCounter = 0;
@@ -79,9 +79,9 @@ window.onload = function() {
         }
 
         questionCounter++;
-        progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+        progressText.innerText = `${(questionCounter/MAX_QUESTIONS)*100 - 25}% Complete`;
         // progress-bar live updates 
-        progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100}%`
+        progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100 - 25}%`
 
         const questionsIndex = Math.floor(Math.random() * availibleQuestions.length);
         currentQuestion = availibleQuestions[questionsIndex];

@@ -17,12 +17,21 @@ body {
 
 .choice-container {
     display: flex;
-    width: 100%;
-    margin-bottom: 0.8rem;
+    margin: 1rem 1rem;
     border-radius: 5px;
     font-size: 3rem;
-    min-width: 80rem;
+    min-width: 40rem;
     background-color: var(--orange);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .choice-container:hover {
@@ -83,6 +92,12 @@ body {
 #display-bar {
     display: flex;
     justify-content: space-between;
+}
+
+#luna {
+    width: 10%;
+    display: block;
+    margin: auto;
 }
 
 /* settings */
