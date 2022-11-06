@@ -12,6 +12,52 @@ window.onload = function() {
     const progressBarFull = document.getElementById("progress-bar-full");
     const choices = Array.from(document.querySelectorAll(".choice-text"));
 
+    // settings js 
+    const timeSession = document.getElementById('timed-session');
+    const minutesElem = document.getElementById('minutes');
+    const secondsElem = document.getElementById('seconds');
+    minutesElem.classList.add('hidden');
+    secondsElem.classList.add('hidden');
+
+    var totalSeconds = 0;
+
+    function setTime() {
+        ++totalSeconds;
+        if (totalSeconds % 30 == 0 || (totalSeconds - 2) % 30 == 0) {
+            if (totalSeconds != 2) {
+                secondsElem.classList.add('flash');
+            }
+        }
+        else {
+            secondsElem.classList.remove('flash');
+        }
+        secondsElem.innerHTML = formatTime(totalSeconds % 60, "s");
+        minutesElem.innerHTML = formatTime(parseInt(totalSeconds / 60), "m");
+    }
+
+    function formatTime(val, unit) {
+        var valueString = val + unit + " ";
+        if (valueString.length < 2) {
+            return "0" + valueString;
+        } else {
+            return valueString;
+        }
+    }
+
+    timeSession.addEventListener('change', () =>{
+        if(timeSession.checked){
+            minutesElem.classList.remove('hidden');
+            secondsElem.classList.remove('hidden');
+            setInterval(setTime, 1000);
+        }
+        else {
+            minutesElem.classList.add('hidden');
+            secondsElem.classList.add('hidden');
+        }
+    })
+
+    // end settings js
+
     let currentQuestion = {};
     let acceptingAnswers = true;
     let score = 0;
@@ -84,7 +130,7 @@ window.onload = function() {
   
     var questions = [
         {
-            question: "1: question pulled from API",
+            question: "1: question pulled from api",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -92,7 +138,7 @@ window.onload = function() {
             answer: 1,
         },
         {
-            question: "2: question pulled from API",
+            question: "2: question pulled from api",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -100,7 +146,7 @@ window.onload = function() {
             answer: 2,
         },
         {
-            question: "3: question pulled from API",
+            question: "3: question pulled from api",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -108,7 +154,7 @@ window.onload = function() {
             answer: 3,
         },
         {
-            question: "4: question pulled from API",
+            question: "4: question pulled from api",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",

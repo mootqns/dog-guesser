@@ -3,10 +3,33 @@ Course: CPSC332
 Assignment: Web Project Deliverable 2
 Last Modifed: 11.04.2022 */
 
-#high-scores-list {
+body {
+    --blue: #124e78;
+    --orange: #d74e09;
+    --red: #6e0e0a;
+    --white: #f0f0c9;
+    --yellow: #f2bb05;
+}
+
+.score-list-title {
+    margin-bottom: 1rem;
+}
+
+.score-list {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 2rem auto;
     list-style: none;
+    color: var(--white);
+    width: 100%;
 }
 
 #home-btn {
+    margin-top: 4rem;
+    width: 100%;
     text-decoration: none;
+}
+
+#daily-high {
+    margin-top: 4rem;
 }
