@@ -12,7 +12,8 @@ body {
     --yellow: #f2bb05;
 
     background-color: var(--blue);
-}
+    /* background-image: url(./background.jpg); */
+}   
 
 * {
     margin: 0;

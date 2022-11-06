@@ -19,14 +19,18 @@ To install locally:
 2. Once cloned, navigate to wpd2/docs/index/index.html (start point) and run locally
 
 ## Usage
-finish this once front-end is complete:  
+This simple dog quiz game can be easily played by clicking the "start-game" button. Once there, you will be prompted with a
+question and four answers. If you get a correct answer, 50 points will be added to your score; there are no losses for answering 
+incorrectly. While in-game, you have the option to start a timer to time how long it takes you to answer the questions. Further,
+in the top-right, your progress throughout the quiz will be shown. Once completed, you can enter a username, and, if you chose,
+a picture to store your score on the leaderboard! 
 
 ## Contributing
 As this project serves as a formal final for my CPSC332 course, contributions are not being accepted to avoid academic integrity policy issues
 
 ## Credits
 Author: Matt Nguyen  
-Additional Credits: dog API, youtube videos, etc
+Additional Credits: in the future - [The Dog Api](https://documenter.getpostman.com/view/4016432/the-dog-api/RW81vZ4Z)
 
 ## License 
 MIT License  
