@@ -1,9 +1,7 @@
-# Web Project Deliverable 2 | Front-End 
+# CPSC332 Web Project Final
 
 ## Description
-This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from a dog API. This project's goal is to provide
-simple web-based fun for people aiming to expand their knowkedge on dogs in a exciting, and slightly compeitive way. For this portion, I am implementing the 
-front-end portion of the features of start-game button, live progress/score, CSS styling, leaderboard, API derived questions, and save profile-picture/username buttons.
+This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from a dog API. This project's goal is to provide simple web-based fun for people aiming to expand their knowkedge on dogs in a exciting, and slightly compeitive way. 
 
 ## Table of Contents
 1. [Installation](#installation)
