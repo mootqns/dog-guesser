@@ -5,14 +5,13 @@
 
 // --- script for game.html ---
 window.onload = function() {
-
     const question = document.getElementById("question");
     const progressText = document.getElementById("progress-text");
     const scoreText = document.getElementById("score");
     const progressBarFull = document.getElementById("progress-bar-full");
     const choices = Array.from(document.querySelectorAll(".choice-text"));
 
-    // settings js 
+    // settings js ---
     const timeSession = document.getElementById('timed-session');
     const minutesElem = document.getElementById('minutes');
     const secondsElem = document.getElementById('seconds');
@@ -56,16 +55,17 @@ window.onload = function() {
         }
     })
 
-    // end settings js
+    // end settings js ---
 
+    // game js ---
     let score = 0;
     let questionCounter = 0;
     let availibleQuestions = [];
     let currentQuestion = {};
     let acceptingAnswers = true;
     
-    // inital startGame function
     function startGame() {
+        getDogImage();
         questionCounter = 0;
         score = 0;
         availibleQuestions = [...questions];
@@ -100,6 +100,7 @@ window.onload = function() {
         choice.addEventListener('click', e => {
             if(!acceptingAnswers) return;
 
+            getDogImage();
             acceptingAnswers = false;
             const selectedChoice = e.target;
             const selectedAnswer = selectedChoice.dataset['number'];
@@ -130,7 +131,7 @@ window.onload = function() {
   
     var questions = [
         {
-            question: "1: question pulled from api",
+            question: "1. what dog breed?",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -138,7 +139,7 @@ window.onload = function() {
             answer: 1,
         },
         {
-            question: "2: question pulled from api",
+            question: "2. what dog breed?",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -146,7 +147,7 @@ window.onload = function() {
             answer: 2,
         },
         {
-            question: "3: question pulled from api",
+            question: "3. what dog breed?",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -154,7 +155,7 @@ window.onload = function() {
             answer: 3,
         },
         {
-            question: "4: question pulled from api",
+            question: "4. what dog breed?",
             choice1: "answer",
             choice2: "answer",
             choice3: "answer",
@@ -165,6 +166,33 @@ window.onload = function() {
 
     const SCORE_POINTS = 50;
     const MAX_QUESTIONS = 4;
+    // end game js ---
+    
+    // api js ---
+    const dogImage = document.getElementById('luna');
+    function httpGet(url)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", url, false );
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+
+    function getDogImage()
+    {
+        var json = httpGet('https://dog.ceo/api/breeds/image/random');
+        console.log(json);
+        
+        var array = JSON.parse(json);
+        console.log(array);
+        
+        var url = array.message;
+        console.log(url);
+
+        dogImage.src = url;
+    }
+    // end api js ---
+
 
     startGame();
 }

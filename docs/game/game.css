@@ -95,7 +95,8 @@ body {
 }
 
 #luna {
-    width: 10%;
+    width: 30%;
+    height: 150px;
     display: block;
     margin: auto;
 }
