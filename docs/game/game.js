@@ -54,7 +54,6 @@ window.onload = function() {
             secondsElem.classList.add('hidden');
         }
     })
-
     // end settings js ---
 
     // game js ---
@@ -63,9 +62,10 @@ window.onload = function() {
     let availibleQuestions = [];
     let currentQuestion = {};
     let acceptingAnswers = true;
+    var answer = '';
     
     function startGame() {
-        getDogImage();
+        answer = getDogImage();
         questionCounter = 0;
         score = 0;
         availibleQuestions = [...questions];
@@ -128,7 +128,43 @@ window.onload = function() {
 
         });
     });
-  
+    
+    // api js ---
+    const dogImage = document.getElementById('luna');
+    function httpGet(url)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", url, false );
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+
+    function getDogImage()
+    {
+        var json = httpGet('https://dog.ceo/api/breeds/image/random');
+        // console.log(json);
+        
+        var array = JSON.parse(json);
+        // console.log(array);
+        
+        var url = array.message;
+        // console.log(url);
+
+        // getting correct breed through string methods
+        var urlArr = url.split("/");
+        var answer = urlArr[4];
+        
+        // setting src of dog image
+        dogImage.src = url;
+
+        // setting correct answer
+        for(let i = 0; i < MAX_QUESTIONS; i++){
+            questions[i]["choice" + (i + 1)] = answer;
+        }
+    }
+    
+    // end api js ---
+    
     var questions = [
         {
             question: "1. what dog breed?",
@@ -166,33 +202,8 @@ window.onload = function() {
 
     const SCORE_POINTS = 50;
     const MAX_QUESTIONS = 4;
+
     // end game js ---
-    
-    // api js ---
-    const dogImage = document.getElementById('luna');
-    function httpGet(url)
-    {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", url, false );
-        xmlHttp.send( null );
-        return xmlHttp.responseText;
-    }
-
-    function getDogImage()
-    {
-        var json = httpGet('https://dog.ceo/api/breeds/image/random');
-        console.log(json);
-        
-        var array = JSON.parse(json);
-        console.log(array);
-        
-        var url = array.message;
-        console.log(url);
-
-        dogImage.src = url;
-    }
-    // end api js ---
-
 
     startGame();
 }
