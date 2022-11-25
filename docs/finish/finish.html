@@ -20,20 +20,20 @@ Last Modifed: 11.04.2022 -->
             <h1 id="final-score">0</h1>
                 <form action="/submission" method="post" class="end-form-container">
                     <h2 id="end-text">
-                        enter a name to save your score, upload an image if you'd like a profile photo
+                        enter a name to save your score
                     </h2>
                     <!-- username -->
                     <input type="text" name="username" id="username" placeholder="name">
+                    <!-- score -->
+                    <input type="hidden" name="score" id="score" value="0">
                     <!-- profile image -->
-                    <input id="image-upload-btn" type="file" name="profile-photo">
+                    <!-- <input id="image-upload-btn" type="file" name="profile-photo"> -->
 
                     <!-- submit -->
                     <button class="btn" id="save-score-btn" type="submit" disabled>save</button>
                 </form>
                 <a href="../game/game.html" class="btn end-btn">play again</a>
                 <a href="../index/index.html" class="btn end-btn">home screen</a>
-                <a href="/feedback" class="btn end-btn">feedback</a>
-
         </div>
     </div>
 </body>

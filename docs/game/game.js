@@ -27,14 +27,6 @@ if (typeof window !== "undefined") {
     
         function setTime() {
             ++totalSeconds;
-            if (totalSeconds % 30 == 0 || (totalSeconds - 2) % 30 == 0) {
-                if (totalSeconds != 2) {
-                    secondsElem.classList.add('flash');
-                }
-            }
-            else {
-                secondsElem.classList.remove('flash');
-            }
             secondsElem.innerHTML = formatTime(totalSeconds % 60, "s");
             minutesElem.innerHTML = formatTime(parseInt(totalSeconds / 60), "m");
         }
@@ -67,7 +59,7 @@ if (typeof window !== "undefined") {
         let availibleQuestions = [];
         let currentQuestion = {};
         let acceptingAnswers = true;
-        var answer = '';
+        // var correctAnsNum = Math.floor(Math.random() * (4 - 1 + 1) + 1)
         
         function startGame() {
             answer = getDogImage();
@@ -160,6 +152,14 @@ if (typeof window !== "undefined") {
             // getting correct breed through string methods
             var urlArr = url.split("/");
             var answer = urlArr[4];
+            answer = answer.split("-");
+            if(!(answer[1] === undefined)){
+                answer = answer[1] + ' ' + answer[0];
+            }
+            else 
+                answer = answer[0];
+
+            console.log(answer);
             
             // setting src of dog image
             dogImage.src = url;
@@ -186,7 +186,7 @@ if (typeof window !== "undefined") {
     
         var questions = [
             {
-                question: "1. what dog breed?",
+                question: "what dog breed?",
                 choice1: breeds[Math.floor(Math.random() * breeds.length)],
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
@@ -194,7 +194,7 @@ if (typeof window !== "undefined") {
                 answer: 1,
             },
             {
-                question: "2. what dog breed?",
+                question: "what dog breed?",
                 choice1: breeds[Math.floor(Math.random() * breeds.length)],
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
@@ -202,7 +202,7 @@ if (typeof window !== "undefined") {
                 answer: 2,
             },
             {
-                question: "3. what dog breed?",
+                question: "what dog breed?",
                 choice1: breeds[Math.floor(Math.random() * breeds.length)],
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
@@ -210,7 +210,7 @@ if (typeof window !== "undefined") {
                 answer: 3,
             },
             {
-                question: "4. what dog breed?",
+                question: "what dog breed?",
                 choice1: breeds[Math.floor(Math.random() * breeds.length)],
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
