@@ -17,18 +17,16 @@ Last Modifed: 11.04.2022 -->
 <body>
     <div class="container">
         <div id="high-scores" class="flex-center flex-col">
-            <h1>leaderboard | ejs</h1>
+            <h1>leaderboard</h1>
             <ul class="score-list">
                 <h2 class="score-list-title">highscores</h2>
                 <% players.forEach(function(player){ %>
                     <li><%= player.name %> : <%= player.score %></li>
-                <% }); %>    
-                <!-- <li>
-                    username: score
-                </li>
-                <li>
-                    username: score
-                </li> -->
+                <% }); %>
+                <h2 class="score-list-title">quick times</h2>
+                <% players2.forEach(function(player){ %>
+                    <li><%= player.name %> : <%= player.time %></li>
+                <% }); %>
             </ul>
             <a href="../index/index.html" class="btn" id="home-btn">go home</a>
         </div>

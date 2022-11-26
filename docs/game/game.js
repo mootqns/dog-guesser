@@ -14,19 +14,17 @@ if (typeof window !== "undefined") {
     
         // settings js ---
         const timeSession = document.getElementById('timed-session');
+        const stopTimer = document.getElementById('stop-timer')
         const minutesElem = document.getElementById('minutes');
         const secondsElem = document.getElementById('seconds');
         minutesElem.classList.add('hidden');
         secondsElem.classList.add('hidden');
     
         var totalSeconds = 0;
-    
-        // const myModule = require('../../index.js');
-        // let name = myModule.dogBreedName();
-        // console.log(name);
-    
+        var timer = false;
         function setTime() {
-            ++totalSeconds;
+            localStorage.setItem("recentTime", totalSeconds); 
+            totalSeconds++;
             secondsElem.innerHTML = formatTime(totalSeconds % 60, "s");
             minutesElem.innerHTML = formatTime(parseInt(totalSeconds / 60), "m");
         }
@@ -39,18 +37,16 @@ if (typeof window !== "undefined") {
                 return valueString;
             }
         }
-    
-        timeSession.addEventListener('change', () =>{
-            if(timeSession.checked){
-                minutesElem.classList.remove('hidden');
-                secondsElem.classList.remove('hidden');
-                setInterval(setTime, 1000);
-            }
-            else {
-                minutesElem.classList.add('hidden');
-                secondsElem.classList.add('hidden');
-            }
-        })
+        timeSession.addEventListener('click', () => {
+            minutesElem.classList.remove('hidden');
+            secondsElem.classList.remove('hidden');
+            timer = setInterval(setTime, 1000);  
+        });
+
+        stopTimer.addEventListener('click', () => {
+            clearInterval(timer);
+            totalSeconds= 0;
+        });
         // end settings js ---
     
         // game js ---
@@ -59,7 +55,6 @@ if (typeof window !== "undefined") {
         let availibleQuestions = [];
         let currentQuestion = {};
         let acceptingAnswers = true;
-        // var correctAnsNum = Math.floor(Math.random() * (4 - 1 + 1) + 1)
         
         function startGame() {
             answer = getDogImage();

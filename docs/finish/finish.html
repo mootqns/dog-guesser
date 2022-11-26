@@ -18,6 +18,7 @@ Last Modifed: 11.04.2022 -->
     <div class="container">
         <div id="end" class="flex-center flex-col">
             <h1 id="final-score">0</h1>
+            <h2 id="final-time">0</h2>
                 <form action="/submission" method="post" class="end-form-container">
                     <h2 id="end-text">
                         enter a name to save your score
@@ -26,8 +27,8 @@ Last Modifed: 11.04.2022 -->
                     <input type="text" name="username" id="username" placeholder="name">
                     <!-- score -->
                     <input type="hidden" name="score" id="score" value="0">
-                    <!-- profile image -->
-                    <!-- <input id="image-upload-btn" type="file" name="profile-photo"> -->
+                    <!-- time -->
+                    <input type="hidden" name="time" id="time" value="0">
 
                     <!-- submit -->
                     <button class="btn" id="save-score-btn" type="submit" disabled>save</button>

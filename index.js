@@ -49,7 +49,7 @@ app.post('/submission', function (req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var database = db.db("db");
-        var user = {name: req.body.username, score: parseInt(req.body.score)};
+        var user = {name: req.body.username, score: parseInt(req.body.score), time: parseInt(req.body.time)};
         database.collection("formResults").insertOne(user, function(err, res) {
             if (err) throw err;
             console.log("one document inserted in db");
@@ -62,36 +62,19 @@ app.get('/leaderboard', function(req, res) {
     MongoClient.connect(url, function(err, db){ 
         if (err) throw err;
         var database = db.db("db");
-        database.collection('formResults').find().sort({ score: -1 }).toArray(function(err, result) {
+        database.collection('formResults').find().sort({ score: -1 }).toArray(function(err, scoreSort) {
             if (err)
                 res.send({msg: "failed to retrieve players" });
-            // console.log(Array.from(result)); 
-            res.render('leaderboard', {'players' : result});
-            db.close();
+            database.collection('formResults').find().sort({ time: 1 }).toArray(function(err, timeSort) {
+                if (err)
+                    res.send({msg: "failed to retrieve players" });
+                // console.log(Array.from(result)); 
+                res.render('leaderboard', {'players' : scoreSort, 'players2' : timeSort});
+                db.close();
+            });
         });
     });
  });
-
-// rendering mongodb data using ejs
-
-// mongoose attempt ---------
-// mongoose.connect('mongodb://localhost:27017/db');
-
-// const playerSchema = new mongoose.Schema({
-//     name: String,
-//     score : Number
-// });
-
-// const Player = mongoose.model('Player', playerSchema);
-
-// app.get('/leaderboard', function(req, res) {
-//     Player.find({}, function(err, players){
-//         res.render('leaderboard', {
-//             playersList : players
-//         });
-//     });
-// });
-// ----------------------
 
 
 // testing mongo -----

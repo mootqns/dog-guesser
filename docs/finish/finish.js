@@ -9,9 +9,15 @@ window.onload = function() {
     const finalScore = document.getElementById("final-score");
     const scoreForm = document.getElementById("score");
     const recentScore = localStorage.getItem("recentScore");
+    const finalTime = document.getElementById("final-time");
+    const recentTime = localStorage.getItem("recentTime");
+    const timeForm = document.getElementById("time");
 
     finalScore.innerText = recentScore;
     scoreForm.value = recentScore;
+
+    finalTime.innerText = recentTime + " seconds";
+    timeForm.value = recentTime;
 
     user.addEventListener('keyup', () => {
         saveScoreBtn.disabled = !user.value;
