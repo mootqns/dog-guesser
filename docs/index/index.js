@@ -19,7 +19,7 @@ window.onload = function() {
 
     // leaderboard button active
     leaderboardBtn.addEventListener("click", ()=>{
-        window.location.assign('../leaderboard/leaderboard.html');
+        window.location.assign('/leaderboard'); // ../leaderboard/leaderboard.html
     });
 
     settingsBtn.addEventListener("click", ()=>{

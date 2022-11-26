@@ -8,7 +8,7 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const ejs = require("ejs");
+const ejs = require('ejs');
 
 // database connections
 const MongoClient = require('mongodb').MongoClient;
@@ -35,6 +35,8 @@ router.get('/',function(res,req){
     res.sendFile(path.join(__dirname+'/docs/index/index.html'));
 });
 // end static files ---
+
+// configurations
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,28 +49,52 @@ app.post('/submission', function (req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var database = db.db("db");
-        var user = {name: req.body.username, score: req.body.score};
+        var user = {name: req.body.username, score: parseInt(req.body.score)};
         database.collection("formResults").insertOne(user, function(err, res) {
             if (err) throw err;
-            console.log("1 document inserted in db");
+            console.log("one document inserted in db");
             db.close();
         });
     });
 }); 
 
-// MongoClient.connect(url, function(err, db) {
-//     if (err) throw err;
-//     var database = db.db("db");
-//     var scoreSort = {score: 1};
-//     database.collection("formResults").find().sort(scoreSort).toArray(function(err, result) {
-//         if (err) throw err;
-//         console.log(result);
-//         console.log(test);
-//         db.close();
-//     });
+app.get('/leaderboard', function(req, res) {
+    MongoClient.connect(url, function(err, db){ 
+        if (err) throw err;
+        var database = db.db("db");
+        database.collection('formResults').find().sort({ score: -1 }).toArray(function(err, result) {
+            if (err)
+                res.send({msg: "failed to retrieve players" });
+            // console.log(Array.from(result)); 
+            res.render('leaderboard', {'players' : result});
+            db.close();
+        });
+    });
+ });
+
+// rendering mongodb data using ejs
+
+// mongoose attempt ---------
+// mongoose.connect('mongodb://localhost:27017/db');
+
+// const playerSchema = new mongoose.Schema({
+//     name: String,
+//     score : Number
 // });
 
+// const Player = mongoose.model('Player', playerSchema);
 
+// app.get('/leaderboard', function(req, res) {
+//     Player.find({}, function(err, players){
+//         res.render('leaderboard', {
+//             playersList : players
+//         });
+//     });
+// });
+// ----------------------
+
+
+// testing mongo -----
 // MongoClient.connect(url, function(err, db) {
 //     if (err) throw err;
 //     var dbo = db.db("testdb");
