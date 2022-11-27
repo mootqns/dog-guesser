@@ -21,11 +21,15 @@ Last Modifed: 11.04.2022 -->
             <ul class="score-list">
                 <h2 class="score-list-title">highscores</h2>
                 <% players.forEach(function(player){ %>
-                    <li><%= player.name %> : <%= player.score %></li>
+                    <% if(!(player.time === 0)) { %>
+                        <li><%= player.name %> | <%= player.score %>pts | <%= player.time %>s</li>
+                    <% } %>
                 <% }); %>
-                <h2 class="score-list-title">quick times</h2>
-                <% players2.forEach(function(player){ %>
-                    <li><%= player.name %> : <%= player.time %></li>
+                <h2 class="score-list-title">untimed highscores</h2>
+                <% players.forEach(function(player){ %>
+                    <% if(player.time === 0) { %>
+                        <li><%= player.name %> | <%= player.score %>pts</li>
+                    <% } %>
                 <% }); %>
             </ul>
             <a href="../index/index.html" class="btn" id="home-btn">go home</a>

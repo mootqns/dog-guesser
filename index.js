@@ -62,29 +62,11 @@ app.get('/leaderboard', function(req, res) {
     MongoClient.connect(url, function(err, db){ 
         if (err) throw err;
         var database = db.db("db");
-        database.collection('formResults').find().sort({ score: -1 }).toArray(function(err, scoreSort) {
-            if (err)
-                res.send({msg: "failed to retrieve players" });
-            database.collection('formResults').find().sort({ time: 1 }).toArray(function(err, timeSort) {
-                if (err)
-                    res.send({msg: "failed to retrieve players" });
-                // console.log(Array.from(result)); 
-                res.render('leaderboard', {'players' : scoreSort, 'players2' : timeSort});
+        database.collection('formResults').find().sort({ score: -1 , time: 1}).toArray(function(err, scoreSort) {
+            if (err) res.send({msg: "failed to retrieve players" });
+                // console.log(Array.from(scoreSort)); 
+                res.render('leaderboard', {'players' : scoreSort});
                 db.close();
-            });
         });
     });
- });
-
-
-// testing mongo -----
-// MongoClient.connect(url, function(err, db) {
-//     if (err) throw err;
-//     var dbo = db.db("testdb");
-//     var myobj = { name: "remy", job: "sales "};
-//     dbo.collection("dogs").insertOne(myobj, function(err, res) {
-//         if (err) throw err;
-//         console.log("remy inserted");
-//         db.close();
-//     });
-// });
+});

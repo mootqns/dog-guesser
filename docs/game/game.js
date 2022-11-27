@@ -12,18 +12,15 @@ if (typeof window !== "undefined") {
         const progressBarFull = document.getElementById("progress-bar-full");
         const choices = Array.from(document.querySelectorAll(".choice-text"));
     
-        // settings js ---
+        // timer js ---
         const timeSession = document.getElementById('timed-session');
-        const stopTimer = document.getElementById('stop-timer')
         const minutesElem = document.getElementById('minutes');
         const secondsElem = document.getElementById('seconds');
         minutesElem.classList.add('hidden');
         secondsElem.classList.add('hidden');
     
         var totalSeconds = 0;
-        var timer = false;
         function setTime() {
-            localStorage.setItem("recentTime", totalSeconds); 
             totalSeconds++;
             secondsElem.innerHTML = formatTime(totalSeconds % 60, "s");
             minutesElem.innerHTML = formatTime(parseInt(totalSeconds / 60), "m");
@@ -41,11 +38,6 @@ if (typeof window !== "undefined") {
             minutesElem.classList.remove('hidden');
             secondsElem.classList.remove('hidden');
             timer = setInterval(setTime, 1000);  
-        });
-
-        stopTimer.addEventListener('click', () => {
-            clearInterval(timer);
-            totalSeconds= 0;
         });
         // end settings js ---
     
@@ -67,11 +59,13 @@ if (typeof window !== "undefined") {
         function getQuestion() {
             if(availibleQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
                 localStorage.setItem("recentScore", score); 
+                localStorage.setItem("recentTime", totalSeconds); 
                 return window.location.assign('../finish/finish.html');
             }
     
             questionCounter++;
             progressText.innerText = `${(questionCounter/MAX_QUESTIONS)*100 - 25}% Complete`;
+
             // progress-bar live updates 
             progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100 - 25}%`
     
@@ -136,13 +130,10 @@ if (typeof window !== "undefined") {
         function getDogImage()
         {
             var json = httpGet('https://dog.ceo/api/breeds/image/random');
-            // console.log(json);
             
             var array = JSON.parse(json);
-            // console.log(array);
             
             var url = array.message;
-            // console.log(url);
     
             // getting correct breed through string methods
             var urlArr = url.split("/");
@@ -154,8 +145,6 @@ if (typeof window !== "undefined") {
             else 
                 answer = answer[0];
 
-            console.log(answer);
-            
             // setting src of dog image
             dogImage.src = url;
     
@@ -167,13 +156,10 @@ if (typeof window !== "undefined") {
 
         function getBreed(){
             var json = httpGet('https://dog.ceo/api/breeds/list');
-            // console.log(json);
-            
+     
             var array = JSON.parse(json);
-            // console.log(array);
             
             var breeds = array.message;
-            // console.log(breeds);
             
             return breeds;
         }
@@ -218,7 +204,7 @@ if (typeof window !== "undefined") {
         const MAX_QUESTIONS = 4;
     
         // end game js ---
-    
+
         startGame();
     }
 }
