@@ -8,7 +8,8 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const ejs = require('ejs');
+const axios = require('axios');
+// const ejs = require('ejs');
 
 // database connections
 const MongoClient = require('mongodb').MongoClient;
@@ -43,6 +44,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',router);
 
 app.listen(PORT);
+
+//api implementation
+app.get('/api', function(req, res) {
+    axios.get('https://dog.ceo/api/breeds/image/random', {
+    headers: {
+        'Accept-Encoding': 'gzip'
+    }
+    }).then(res2 => {
+        // console.log(res2.data)
+        res.json(res2.data);
+    })
+    .catch(err => console.log(err));
+});
+
+app.get('/api-breeds', function(req, res) {
+    axios.get('https://dog.ceo/api/breeds/list', {
+    headers: {
+        'Accept-Encoding': 'gzip'
+    }
+    }).then(res2 => {
+        // console.log(res2.data)
+        res.json(res2.data);
+    })
+    .catch(err => console.log(err));
+});
 
 //database implementation
 app.post('/submission', function (req, res) {

@@ -32,7 +32,7 @@ As this project serves as a formal final for my CPSC332 course contributions are
 
 ## Credits
 Author: Matt Nguyen  
-Additional Credits: [The Dog API](https://dog.ceo/dog-api/)
+Additional Credits: [Dog CEO API](https://dog.ceo/dog-api/)
 
 ## License 
 MIT License  

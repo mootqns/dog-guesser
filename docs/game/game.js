@@ -119,22 +119,26 @@ if (typeof window !== "undefined") {
         const dogImage = document.getElementById('luna');
         var breeds = getBreed();
 
-        function httpGet(url)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", url, false );
-            xmlHttp.send( null );
-            return xmlHttp.responseText;
-        }
-    
+        // function httpGet(url)
+        // {
+        //     var xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.open( "GET", url, false );
+        //     xmlHttp.send( null );
+        //     return xmlHttp.responseText;
+        // }
+
         function getDogImage()
         {
-            var json = httpGet('https://dog.ceo/api/breeds/image/random');
-            
+            // var json = httpGet('https://dog.ceo/api/breeds/image/random');
+            var json = ($.ajax({ type: "GET",   
+                            url: "/api",   
+                            async: false,
+                            }).responseText);
+
             var array = JSON.parse(json);
             
             var url = array.message;
-    
+
             // getting correct breed through string methods
             var urlArr = url.split("/");
             var answer = urlArr[4];
@@ -155,7 +159,11 @@ if (typeof window !== "undefined") {
         }
 
         function getBreed(){
-            var json = httpGet('https://dog.ceo/api/breeds/list');
+            // var json = httpGet('https://dog.ceo/api/breeds/list');
+            var json = ($.ajax({ type: "GET",   
+            url: "/api-breeds",   
+            async: false,
+            }).responseText);
      
             var array = JSON.parse(json);
             
