@@ -1,7 +1,7 @@
 # CPSC332 Web Project Final
 
 ## Description
-This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from a dog API. This project's goal is to provide simple web-based fun for people aiming to expand their knowkedge on dogs in a exciting, and slightly compeitive way. 
+This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from the Dog CEO API. This project's goal is to provide simple web-based fun for people aiming to expand their knowkedge on dogs in a exciting, and slightly compeitive way. 
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -11,24 +11,28 @@ This repository contains the code for my CPSC332 Web Project Final- a kahoot lik
 5. [License](#license)
 
 ## Installation
-To install locally: 
+To install locally on Mac OS: 
 1. Clone this repository  
-`git clone https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-mootqns.git`  
-2. Once cloned, navigate to wpd2/docs/index/index.html (start point) and run locally
+`git clone https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-mootqns.git`
+2. Start MongoDB
+`brew services start mongodb-community`   
+3. Once cloned with MongoDB running, navigate to wpd/index.js (start point) and run
+`node index.js`
+4. Navigate to localhost:8080
 
 ## Usage
-This simple dog quiz game can be easily played by clicking the "start-game" button. Once there, you will be prompted with a
-question and four answers. If you get a correct answer, 50 points will be added to your score; there are no losses for answering 
-incorrectly. While in-game, you have the option to start a timer to time how long it takes you to answer the questions. Further,
-in the top-right, your progress throughout the quiz will be shown. Once completed, you can enter a username, and, if you chose,
-a picture to store your score on the leaderboard! 
+This simple dog quiz game can be easily played by clicking the "start-game" button. Once there, you will be prompted with an
+image of a dog and different choices for the breed. Your goal is to guess the correct breed based on this image. If you get a 
+correct answer, 50 points will be added to your score; there are no points losses for answering incorrectly. While in-game, you have 
+the option to start a timer to time how long it takes you to answer the questions. Further, in the top-right, your progress 
+throughout the quiz will be shown. Once completed, you can enter a username to store your score on the leaderboard! 
 
 ## Contributing
-As this project serves as a formal final for my CPSC332 course, contributions are not being accepted to avoid academic integrity policy issues
+As this project serves as a formal final for my CPSC332 course contributions are not being accepted to avoid academic integrity policy issues
 
 ## Credits
 Author: Matt Nguyen  
-Additional Credits: [The Dog API](https://documenter.getpostman.com/view/4016432/the-dog-api/RW81vZ4Z)
+Additional Credits: [The Dog API](https://dog.ceo/dog-api/)
 
 ## License 
 MIT License  
