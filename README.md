@@ -14,9 +14,9 @@ This repository contains the code for my CPSC332 Web Project Final- a kahoot lik
 To install locally on Mac OS: 
 1. Clone this repository  
 `git clone https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-mootqns.git`
-2. Start MongoDB
+2. Start MongoDB  
 `brew services start mongodb-community`   
-3. Once cloned with MongoDB running, navigate to wpd/index.js (start point) and run
+3. Once cloned with MongoDB running, navigate to wpd/index.js (start point) and run  
 `node index.js`
 4. Navigate to localhost:8080
 
