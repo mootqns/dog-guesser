@@ -161,7 +161,23 @@ if (typeof window !== "undefined") {
             questions[3]["choice" + answer4] = answer;
             questions[4]["choice" + answer5] = answer;
             questions[5]["choice" + answer6] = answer;
-        
+            
+            function generateBreed() {
+                var breed = breeds[Math.floor(Math.random() * breeds.length)];
+                if(breed == answer) {
+                    generateBreed();
+                } 
+                else {
+                    return breed;
+                }
+            }
+
+            for(let i = 0; i < 6; i++){
+                questions[i]["choice1"] = generateBreed();
+                questions[i]["choice2"] = generateBreed();
+                questions[i]["choice3"] = generateBreed();
+                questions[i]["choice4"] = generateBreed();
+            }
         }
 
         function getBreed(){
@@ -186,53 +202,45 @@ if (typeof window !== "undefined") {
         var answer5 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
         var answer6 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 
-        function generateBreed() {
-            var breed = breeds[Math.floor(Math.random() * breeds.length)];
-            if(!(breed == answer))
-                return breed;
-            
-                return generateBreed()
-        }
-
         var questions = [
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer1,
             },
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer2,
             },
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer3,
             },
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer4,
             },
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer5,
             },
             {
