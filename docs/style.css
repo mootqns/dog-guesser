@@ -82,3 +82,32 @@ h2 {
     border: none;
     font-family: belleza;
 }
+
+/* HELP SPECIFIC STYLING */
+.help-list-title {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+}
+
+.help-list {
+    font-size: 4.0rem;
+    text-align: center;
+    margin-bottom: 2rem auto;
+    color: white;
+    width: 100%;
+}
+
+.help-item {
+    margin-bottom: 2rem;
+}
+
+#home-btn {
+    margin-top: 4rem;
+    text-decoration: none;
+    width: 28rem;
+}
+
+#last-item {
+    list-style: none;
+}
+

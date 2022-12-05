@@ -8,6 +8,8 @@
 window.onload = function() {
     const startBtn = document.getElementById("play-btn");
     const leaderboardBtn = document.getElementById("leaderboard-btn");
+    const helpBtn = document.getElementById("help-btn");
+
 
     // start-game button active
     startBtn.addEventListener("click", ()=>{
@@ -16,6 +18,11 @@ window.onload = function() {
 
     // leaderboard button active
     leaderboardBtn.addEventListener("click", ()=>{
-        window.location.assign('/leaderboard'); // ../leaderboard/leaderboard.html
+        window.location.assign('/leaderboard');
+    });
+
+    // help button active
+    helpBtn.addEventListener("click", ()=>{
+        window.location.assign('/help.html'); 
     });
 }
