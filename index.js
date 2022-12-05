@@ -123,6 +123,7 @@ app.post('/submission', function (req, res) {
                 console.log("one document inserted in db");
                 db.close();
             });
+            res.status(204).send();
         }
         else {
             console.log("data validation failed");
