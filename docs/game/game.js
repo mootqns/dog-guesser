@@ -64,7 +64,11 @@ if (typeof window !== "undefined") {
                 localStorage.setItem("recentTime", totalSeconds); 
                 return window.location.assign('../finish/finish.html');
             }
-    
+            
+            if(questionCounter > 0){
+                timerBox.classList.add('hidden'); 
+            }
+            
             questionCounter++;
 
             // progress-bar live updates 

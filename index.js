@@ -3,6 +3,8 @@
 // Assignment: Web Project Deliverable 3
 // Last Modifed: 12.05.2022
 
+//todo: update readme, quick rules page
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -136,7 +138,7 @@ app.post('/submission', function (req, res) {
         var rules = {
             name: ['required', 'string'],
             score: ['required', 'integer', 'between:0,300'],
-            time: ['required' , 'min:0', 'integer']
+            time: ['required' , 'integer', 'min:0']
         }
 
         var user = {name: cleanName, score: parseInt(cleanScore), time: parseInt(cleanTime)};
