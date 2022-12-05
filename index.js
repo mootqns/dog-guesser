@@ -93,7 +93,7 @@ app.get('/api', function(req, res) {
         
         // Ending the response 
         res2.on('end', () => {
-            console.log(JSON.parse(data));
+            // console.log(JSON.parse(data));
             res.send(JSON.parse(data));
         });
         
@@ -119,7 +119,7 @@ app.get('/api-breeds', function(req, res) {
         
         // Ending the response 
         res2.on('end', () => {
-            console.log(JSON.parse(data));
+            // console.log(JSON.parse(data));
             res.send(JSON.parse(data));
         });
         

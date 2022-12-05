@@ -154,16 +154,8 @@ if (typeof window !== "undefined") {
             dogImage.src = url;
     
             // setting correct answers
-            console.log(answer);
-            questions[0]["choice" + answer1] = answer;
-            questions[1]["choice" + answer2] = answer;
-            questions[2]["choice" + answer3] = answer;
-            questions[3]["choice" + answer4] = answer;
-            questions[4]["choice" + answer5] = answer;
-            questions[5]["choice" + answer6] = answer;
-            
             function generateBreed() {
-                var breed = breeds[Math.floor(Math.random() * breeds.length)];
+                var breed = breeds[Math.floor(Math.random() * (breeds.length - 1))];
                 if(breed == answer) {
                     generateBreed();
                 } 
@@ -178,6 +170,15 @@ if (typeof window !== "undefined") {
                 questions[i]["choice3"] = generateBreed();
                 questions[i]["choice4"] = generateBreed();
             }
+
+            console.log(answer);
+            
+            questions[0]["choice" + answer1] = answer;
+            questions[1]["choice" + answer2] = answer;
+            questions[2]["choice" + answer3] = answer;
+            questions[3]["choice" + answer4] = answer;
+            questions[4]["choice" + answer5] = answer;
+            questions[5]["choice" + answer6] = answer;
         }
 
         function getBreed(){
@@ -245,10 +246,10 @@ if (typeof window !== "undefined") {
             },
             {
                 question: "what dog breed?",
-                choice1: breeds[Math.floor(Math.random() * breeds.length)],
-                choice2: breeds[Math.floor(Math.random() * breeds.length)],
-                choice3: breeds[Math.floor(Math.random() * breeds.length)],
-                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                choice1: "choice",
+                choice2: "choice",
+                choice3: "choice",
+                choice4: "choice",
                 answer: answer6,
             }
         ]
