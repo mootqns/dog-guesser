@@ -3,20 +3,15 @@
 // Assignment: Web Project Deliverable 3
 // Last Modifed: 11.04.2022
 
-// todo:
-// data sanitization/valiation
-// ui/ux
-// fix time - should go away on starting the timer
-
 const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const axios = require('axios');
 const sanitize = require('mongo-sanitize');
 const validator = require('validatorjs');
 const https = require('https');
+// const axios = require('axios');
 
 // database connections
 const MongoClient = require('mongodb').MongoClient;
@@ -52,6 +47,7 @@ app.use('/',router);
 app.listen(PORT);
 
 //api implementation
+// axios --- 
 // app.get('/api', function(req, res) {
 //     axios.get('https://dog.ceo/api/breeds/image/random', {
 //     headers: {
@@ -75,6 +71,7 @@ app.listen(PORT);
 //     })
 //     .catch(err => console.log(err));
 // });
+// end axios ---
 
 app.get('/api', function(req, res) {
     const options = {
@@ -83,7 +80,6 @@ app.get('/api', function(req, res) {
         method: 'GET'
     };
         
-    // Sending the request
     const request = https.request(options, (res2) => {
         let data = ''
         
@@ -91,7 +87,6 @@ app.get('/api', function(req, res) {
             data += chunk;
         });
         
-        // Ending the response 
         res2.on('end', () => {
             // console.log(JSON.parse(data));
             res.send(JSON.parse(data));
@@ -109,7 +104,6 @@ app.get('/api-breeds', function(req, res) {
         method: 'GET'
     };
         
-    // Sending the request
     const request = https.request(options, (res2) => {
         let data = ''
         
@@ -117,7 +111,6 @@ app.get('/api-breeds', function(req, res) {
             data += chunk;
         });
         
-        // Ending the response 
         res2.on('end', () => {
             // console.log(JSON.parse(data));
             res.send(JSON.parse(data));
@@ -156,6 +149,9 @@ app.post('/submission', function (req, res) {
                 console.log("one document inserted in db");
                 db.close();
             });
+        }
+        else {
+            console.log("data validation failed");
         }
     });
 }); 
