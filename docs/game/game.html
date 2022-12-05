@@ -24,24 +24,28 @@ Last Modifed: 11.04.2022 -->
                     <h1 id="score" class="display-main-text">
                         0
                     </h1>
-                </div>
-                <div class="display-item">
-                    <label id="minutes" class="time">00m</label><label id="seconds" class="time">00s</label>
-                </div>
-                <div class="display-item">
-                    <p id="progress-text" class="display-prefix">
-                        Question
-                    </p>
                     <div id="progress-bar">
                         <div id="progress-bar-full"></div>
                     </div>
+                    <div id="centered">
+                        <label id="minutes" class="time">00m</label><label id="seconds" class="time">00s</label>
+                    </div>
+                    <div class="display-item" id="timer-box">
+                        <div id="centered">
+                            <button id="timed-session">start timer</button>
+                        </div>
+                    </div> 
                 </div>
             </div>
-            <img alt="luna" class="center-justify flex-col" id="luna">
-            <h1 id="question">
-                this is a question...
-            </h1>
-            <div class="grid-container">
+            <div>
+                <img alt="luna" class="center-justify flex-col" id="luna">
+            </div>
+            <div>
+                <div id="centered">
+                    <h2 id="question">
+                        this is a question...
+                    </h2>
+                </div>
                 <div class="choice-container">
                     <p class="choice-prefix">A</p>
                     <p class="choice-text" data-number="1">Choice 1</p>
@@ -58,16 +62,7 @@ Last Modifed: 11.04.2022 -->
                     <p class="choice-prefix">D</p>
                     <p class="choice-text" data-number="4">Choice 3</p>
                 </div>
-            </div>
-            <div class="flex-center flex-col">
-                <h1 id="settings-txt">settings</h1>
-                <fieldset id="settings">
-                        <div>
-                            <span>timer</span>
-                            <button id="timed-session">start</button>
-                       </div>
-               </fieldset>
-           </div>  
+            </div> 
         </div>
     </div>
 </body>

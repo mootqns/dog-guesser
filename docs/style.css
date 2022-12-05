@@ -11,8 +11,8 @@ body {
     --white: #f0f0c9;
     --yellow: #f2bb05;
 
-    background-color: var(--blue);
-    /* background-image: url(./background.jpg); */
+    background-color: #cb997e;ƒ
+    /* background-image: url(url) */
 }   
 
 * {
@@ -24,13 +24,13 @@ body {
 
 h1 {
     font-size: 5.4rem;
-    color: var(--white);
+    color: white;
     margin-bottom: 4rem;
 }
 
 h2 {
     font-size: 4.2rem;
-    color: var(--white);
+    color: white;
     margin-bottom: 4rem;
 }
 
@@ -65,9 +65,9 @@ h2 {
 
 .btn {
     font-size: 3.8rem;
-    color: var(--white);
+    color: white;
     margin-bottom: 1rem;
-    background-color: var(--orange);
+    background-color: #ddbea9;
     padding: 2rem;
     text-align: center;
     border-radius: 6px;

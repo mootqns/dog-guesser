@@ -17,15 +17,15 @@ Last Modifed: 11.04.2022 -->
 <body>
     <div class="container">
         <div id="high-scores" class="flex-center flex-col">
-            <h1>leaderboard</h1>
+            <h1 id="lb-title">leaderboard</h1>
             <ul class="score-list">
-                <h2 class="score-list-title">highscores</h2>
+                <h2 class="score-list-title">timed</h2>
                 <% players.forEach(function(player){ %>
                     <% if(!(player.time === 0)) { %>
                         <li><%= player.name %> | <%= player.score %>pts | <%= player.time %>s</li>
                     <% } %>
                 <% }); %>
-                <h2 class="score-list-title">untimed highscores</h2>
+                <h2 class="score-list-title">untimed</h2>
                 <% players.forEach(function(player){ %>
                     <% if(player.time === 0) { %>
                         <li><%= player.name %> | <%= player.score %>pts</li>

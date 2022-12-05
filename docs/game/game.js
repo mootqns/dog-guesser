@@ -7,7 +7,7 @@
 if (typeof window !== "undefined") {
     window.onload = function() {
         const question = document.getElementById("question");
-        const progressText = document.getElementById("progress-text");
+        // const progressText = document.getElementById("progress-text");
         const scoreText = document.getElementById("score");
         const progressBarFull = document.getElementById("progress-bar-full");
         const choices = Array.from(document.querySelectorAll(".choice-text"));
@@ -16,6 +16,7 @@ if (typeof window !== "undefined") {
         const timeSession = document.getElementById('timed-session');
         const minutesElem = document.getElementById('minutes');
         const secondsElem = document.getElementById('seconds');
+        const timerBox = document.getElementById('timer-box');
         minutesElem.classList.add('hidden');
         secondsElem.classList.add('hidden');
     
@@ -35,6 +36,7 @@ if (typeof window !== "undefined") {
             }
         }
         timeSession.addEventListener('click', () => {
+            timerBox.classList.add('hidden');
             minutesElem.classList.remove('hidden');
             secondsElem.classList.remove('hidden');
             timer = setInterval(setTime, 1000);  
@@ -64,7 +66,6 @@ if (typeof window !== "undefined") {
             }
     
             questionCounter++;
-            progressText.innerText = `${(questionCounter/MAX_QUESTIONS)*100 - 25}% Complete`;
 
             // progress-bar live updates 
             progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100 - 25}%`
@@ -152,14 +153,20 @@ if (typeof window !== "undefined") {
             // setting src of dog image
             dogImage.src = url;
     
-            // setting correct answer
-            for(let i = 0; i < MAX_QUESTIONS; i++){
-                questions[i]["choice" + (i + 1)] = answer;
-            }
+            // setting correct answers
+            console.log(answer);
+            questions[0]["choice" + answer1] = answer;
+            questions[1]["choice" + answer2] = answer;
+            questions[2]["choice" + answer3] = answer;
+            questions[3]["choice" + answer4] = answer;
+            questions[4]["choice" + answer5] = answer;
+            questions[5]["choice" + answer6] = answer;
+        
         }
 
         function getBreed(){
             // var json = httpGet('https://dog.ceo/api/breeds/list');
+            
             var json = ($.ajax({ type: "GET",   
             url: "/api-breeds",   
             async: false,
@@ -172,7 +179,13 @@ if (typeof window !== "undefined") {
             return breeds;
         }
         // end api js ---
-    
+        var answer1 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        var answer2 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        var answer3 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        var answer4 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        var answer5 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        var answer6 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+
         var questions = [
             {
                 question: "what dog breed?",
@@ -180,7 +193,7 @@ if (typeof window !== "undefined") {
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
                 choice4: breeds[Math.floor(Math.random() * breeds.length)],
-                answer: 1,
+                answer: answer1,
             },
             {
                 question: "what dog breed?",
@@ -188,7 +201,7 @@ if (typeof window !== "undefined") {
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
                 choice4: breeds[Math.floor(Math.random() * breeds.length)],
-                answer: 2,
+                answer: answer2,
             },
             {
                 question: "what dog breed?",
@@ -196,7 +209,7 @@ if (typeof window !== "undefined") {
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
                 choice4: breeds[Math.floor(Math.random() * breeds.length)],
-                answer: 3,
+                answer: answer3,
             },
             {
                 question: "what dog breed?",
@@ -204,12 +217,28 @@ if (typeof window !== "undefined") {
                 choice2: breeds[Math.floor(Math.random() * breeds.length)],
                 choice3: breeds[Math.floor(Math.random() * breeds.length)],
                 choice4: breeds[Math.floor(Math.random() * breeds.length)],
-                answer: 4,
+                answer: answer4,
+            },
+            {
+                question: "what dog breed?",
+                choice1: breeds[Math.floor(Math.random() * breeds.length)],
+                choice2: breeds[Math.floor(Math.random() * breeds.length)],
+                choice3: breeds[Math.floor(Math.random() * breeds.length)],
+                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                answer: answer5,
+            },
+            {
+                question: "what dog breed?",
+                choice1: breeds[Math.floor(Math.random() * breeds.length)],
+                choice2: breeds[Math.floor(Math.random() * breeds.length)],
+                choice3: breeds[Math.floor(Math.random() * breeds.length)],
+                choice4: breeds[Math.floor(Math.random() * breeds.length)],
+                answer: answer6,
             }
         ]
     
         const SCORE_POINTS = 50;
-        const MAX_QUESTIONS = 4;
+        const MAX_QUESTIONS = 5;
     
         // end game js ---
 

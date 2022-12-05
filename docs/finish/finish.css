@@ -30,7 +30,7 @@ input {
     width: 20rem;
     padding: 2rem;
     font-size: 1.7rem;
-    border: 2 rem solid;
+    border: none;
 }
 
 #username {
@@ -54,4 +54,13 @@ input {
     font-family: belleza;
     color: var(--white);
     text-align: center;
+}
+
+#final-time {
+    margin-top: 0px;
+    font-size: 3.1rem;
+}
+
+#final-score {
+    margin-bottom: 2px;
 }

@@ -13,11 +13,14 @@ window.onload = function() {
     const recentTime = localStorage.getItem("recentTime");
     const timeForm = document.getElementById("time");
 
-    finalScore.innerText = recentScore;
+    finalScore.innerText = "score: " + recentScore;
     scoreForm.value = recentScore;
 
-    finalTime.innerText = recentTime + " seconds";
-    timeForm.value = recentTime;
+    if(recentTime > 0){
+        finalTime.classList.remove('hidden');
+        finalTime.innerText = "time: " + recentTime + "s";
+        timeForm.value = recentTime;
+    }
 
     user.addEventListener('keyup', () => {
         saveScoreBtn.disabled = !user.value;

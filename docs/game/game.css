@@ -11,8 +11,8 @@ body {
     --white: #f0f0c9;
     --yellow: #f2bb05;
 
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: #cb997e;
+    color: white;
 }
 
 .choice-container {
@@ -21,18 +21,19 @@ body {
     border-radius: 5px;
     font-size: 3rem;
     min-width: 40rem;
-    background-color: var(--orange);
+    background-color: #ddbea9;
 }
 
-.grid-container {
+/* .grid-container {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    display: flex;
     align-items: center;
     justify-content: center;
     max-width: 80rem;
     margin: 0 auto;
     padding: 2rem;
-}
+} */
 
 .choice-container:hover {
     cursor: pointer;
@@ -46,15 +47,15 @@ body {
 
 .choice-prefix {
     padding: 2rem 2.8rem;
-    color: var(--yellow);
+    color: #ffe8d6;
 }
 
 .correct {
-    background: green;
+    background: #6a994e;
 }
 
 .incorrect {
-    background: red;
+    background: #bc4749;
 }
 
 .display-prefix {
@@ -75,30 +76,38 @@ body {
 }
 
 #progress-bar {
-    border: 0.2rem solid var(--white);
+    border: 0.2rem solid #ffe8d6;
     width: 22rem;
     height: 3rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
     border-radius: 20px;
     overflow: hidden;
 }
 
+#game {
+    flex-direction: row;
+}
 #progress-bar-full {
     height: 100%;
-    background: green;
+    background: #6a994e;
     width: 0%;
 }
 
 #display-bar {
+    margin-right: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 #luna {
-    width: 40%;
-    height: 200px;
+    width: 33rem;
+    height: 100%;
     display: block;
     margin: auto;
+    border-radius: 5px;
+    margin-right: 2rem;
 }
 
 /* settings */
@@ -111,28 +120,17 @@ body {
     margin-top: 0.1rem;
 }
 
-#settings {
-    margin-top: 0rem;
-    width: 100%;
-    height: 150%;
-    font-size: 3.8rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-    background-color: var(--orange);
-    padding: 2rem;
-    border-radius: 6px;
-    border: none;
-    width: auto;
-}
-
-#timed-session-label {
+#timed-session{
     font-size: 1.8rem;
-    margin-left: 1.5rem;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    color: white;
+    background-color: #ddbea9;
+    text-decoration: none;
+    border: none;
 }
 
-#settings-txt {
-    font-size: 2rem;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-    margin-top: 2rem;
+#centered {
+    text-align: center;
 }
