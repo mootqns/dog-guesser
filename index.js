@@ -3,7 +3,7 @@
 // Assignment: Web Project Deliverable 3
 // Last Modifed: 12.05.2022
 
-//todo: update readme, quick rules page
+//todo: update readme
 
 const express = require('express');
 const app = express();
@@ -13,7 +13,6 @@ const bodyParser = require('body-parser');
 const sanitize = require('mongo-sanitize');
 const validator = require('validatorjs');
 const https = require('https');
-// const axios = require('axios');
 
 // database connections
 const MongoClient = require('mongodb').MongoClient;
@@ -47,33 +46,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',router);
 
 app.listen(PORT);
-
-//api implementation
-// axios --- 
-// app.get('/api', function(req, res) {
-//     axios.get('https://dog.ceo/api/breeds/image/random', {
-//     headers: {
-//         'Accept-Encoding': 'gzip'
-//     }
-//     }).then(res2 => {
-//         // console.log(res2.data)
-//         res.json(res2.data);
-//     })
-//     .catch(err => console.log(err));
-// });
-
-// app.get('/api-breeds', function(req, res) {
-//     axios.get('https://dog.ceo/api/breeds/list', {
-//     headers: {
-//         'Accept-Encoding': 'gzip'
-//     }
-//     }).then(res2 => {
-//         // console.log(res2.data)
-//         res.json(res2.data);
-//     })
-//     .catch(err => console.log(err));
-// });
-// end axios ---
 
 app.get('/api', function(req, res) {
     const options = {

@@ -14,7 +14,7 @@ This repository contains the code for my CPSC332 Web Project Final- a kahoot lik
 To install locally on Mac OS: 
 1. Clone this repository  
 `git clone https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-mootqns.git`
-2. Start MongoDB  
+2. Start MongoDB (see [here](https://www.mongodb.com/docs/manual/administration/install-community/) to install)  
 `brew services start mongodb-community`   
 3. Once cloned with MongoDB running, navigate to wpd/index.js (start point) and run  
 `node index.js`
@@ -28,7 +28,7 @@ the option to start a timer to time how long it takes you to answer the question
 throughout the quiz will be shown. Once completed, you can enter a username to store your score on the leaderboard! 
 
 ## Contributing
-As this project serves as a formal final for my CPSC332 course contributions are not being accepted to avoid academic integrity policy issues
+As this project serves as the final for my CPSC332 course contributions are not being accepted to avoid academic integrity policy issues
 
 ## Credits
 Author: Matt Nguyen  
