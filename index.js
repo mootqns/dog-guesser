@@ -16,6 +16,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 const sanitize = require('mongo-sanitize');
 const validator = require('validatorjs');
+const https = require('https');
 
 // database connections
 const MongoClient = require('mongodb').MongoClient;
@@ -51,28 +52,80 @@ app.use('/',router);
 app.listen(PORT);
 
 //api implementation
+// app.get('/api', function(req, res) {
+//     axios.get('https://dog.ceo/api/breeds/image/random', {
+//     headers: {
+//         'Accept-Encoding': 'gzip'
+//     }
+//     }).then(res2 => {
+//         // console.log(res2.data)
+//         res.json(res2.data);
+//     })
+//     .catch(err => console.log(err));
+// });
+
+// app.get('/api-breeds', function(req, res) {
+//     axios.get('https://dog.ceo/api/breeds/list', {
+//     headers: {
+//         'Accept-Encoding': 'gzip'
+//     }
+//     }).then(res2 => {
+//         // console.log(res2.data)
+//         res.json(res2.data);
+//     })
+//     .catch(err => console.log(err));
+// });
+
 app.get('/api', function(req, res) {
-    axios.get('https://dog.ceo/api/breeds/image/random', {
-    headers: {
-        'Accept-Encoding': 'gzip'
-    }
-    }).then(res2 => {
-        // console.log(res2.data)
-        res.json(res2.data);
-    })
-    .catch(err => console.log(err));
+    const options = {
+        host: 'dog.ceo',
+        path: '/api/breeds/image/random',
+        method: 'GET'
+    };
+        
+    // Sending the request
+    const request = https.request(options, (res2) => {
+        let data = ''
+        
+        res2.on('data', (chunk) => {
+            data += chunk;
+        });
+        
+        // Ending the response 
+        res2.on('end', () => {
+            console.log(JSON.parse(data));
+            res.send(JSON.parse(data));
+        });
+        
+    }).on("error", (err) => {
+        console.log("Error: ", err)
+    }).end()
 });
 
 app.get('/api-breeds', function(req, res) {
-    axios.get('https://dog.ceo/api/breeds/list', {
-    headers: {
-        'Accept-Encoding': 'gzip'
-    }
-    }).then(res2 => {
-        // console.log(res2.data)
-        res.json(res2.data);
-    })
-    .catch(err => console.log(err));
+    const options = {
+        host: 'dog.ceo',
+        path: '/api/breeds/list',
+        method: 'GET'
+    };
+        
+    // Sending the request
+    const request = https.request(options, (res2) => {
+        let data = ''
+        
+        res2.on('data', (chunk) => {
+            data += chunk;
+        });
+        
+        // Ending the response 
+        res2.on('end', () => {
+            console.log(JSON.parse(data));
+            res.send(JSON.parse(data));
+        });
+        
+    }).on("error", (err) => {
+        console.log("Error: ", err)
+    }).end()
 });
 
 //database implementation

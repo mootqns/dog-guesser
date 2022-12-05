@@ -68,7 +68,7 @@ if (typeof window !== "undefined") {
             questionCounter++;
 
             // progress-bar live updates 
-            progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100 - 25}%`
+            progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)* 100}%`
     
             const questionsIndex = Math.floor(Math.random() * availibleQuestions.length);
             currentQuestion = availibleQuestions[questionsIndex];
@@ -186,6 +186,14 @@ if (typeof window !== "undefined") {
         var answer5 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
         var answer6 = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 
+        function generateBreed() {
+            var breed = breeds[Math.floor(Math.random() * breeds.length)];
+            if(!(breed == answer))
+                return breed;
+            
+                return generateBreed()
+        }
+
         var questions = [
             {
                 question: "what dog breed?",
@@ -238,7 +246,7 @@ if (typeof window !== "undefined") {
         ]
     
         const SCORE_POINTS = 50;
-        const MAX_QUESTIONS = 5;
+        const MAX_QUESTIONS = 6;
     
         // end game js ---
 

@@ -24,17 +24,6 @@ body {
     background-color: #ddbea9;
 }
 
-/* .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
-} */
-
 .choice-container:hover {
     cursor: pointer;
     transform: scale(1.02);
@@ -106,8 +95,9 @@ body {
     height: 100%;
     display: block;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 6px;
     margin-right: 2rem;
+    border: none;
 }
 
 /* settings */
