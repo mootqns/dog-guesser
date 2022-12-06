@@ -5,8 +5,8 @@ Last Modifed: 12.05.2022 */
 
 /* MAIN CSS */
 body {
-    background-color: #cb997e;
-    /* background-image: url(url) */
+    /* background-color: #cb997e; */
+    background-image: url("/background.jpeg");
 }   
 
 * {
@@ -29,14 +29,16 @@ h2 {
 }
 
 .container {
+    background-color: #cb997e;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 80rem;
-    margin: 0 auto;
+    max-width: 110rem;
+    margin: 2rem auto;
     padding: 2rem;
+    border-radius: 5%;
 }
 
 .flex-col {
@@ -95,6 +97,9 @@ h2 {
     margin-bottom: 2rem auto;
     color: white;
     width: 100%;
+    padding: 20px;
+    text-align: left;
+    padding-left: 50px;
 }
 
 .help-item {

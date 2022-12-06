@@ -3,8 +3,6 @@
 // Assignment: Web Project Deliverable 3
 // Last Modifed: 12.05.2022
 
-//todo: update readme
-
 const express = require('express');
 const app = express();
 const path = require('path');
