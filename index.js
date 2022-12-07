@@ -45,6 +45,7 @@ app.use('/',router);
 
 app.listen(PORT);
 
+// api implementation
 app.get('/api', function(req, res) {
     const options = {
         host: 'dog.ceo',
