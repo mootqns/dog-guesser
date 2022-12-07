@@ -123,15 +123,7 @@ if (typeof window !== "undefined") {
         // api js ---
         const dogImage = document.getElementById('luna');
         var breeds = getBreed();
-
-        // function httpGet(url)
-        // {
-        //     var xmlHttp = new XMLHttpRequest();
-        //     xmlHttp.open( "GET", url, false );
-        //     xmlHttp.send( null );
-        //     return xmlHttp.responseText;
-        // }
-
+        
         function getDogImage()
         {
             // var json = httpGet('https://dog.ceo/api/breeds/image/random');
