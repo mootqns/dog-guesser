@@ -9,6 +9,8 @@ window.onload = function() {
     const startBtn = document.getElementById("play-btn");
     const leaderboardBtn = document.getElementById("leaderboard-btn");
     const helpBtn = document.getElementById("help-btn");
+    const presBtn = document.getElementById("pres-btn");
+
 
 
     // start-game button active
@@ -24,5 +26,10 @@ window.onload = function() {
     // help button active
     helpBtn.addEventListener("click", ()=>{
         window.location.assign('/help.html'); 
+    });
+
+    // pres button active
+    presBtn.addEventListener("click", ()=>{
+        window.location.assign('/pres.html'); 
     });
 }
