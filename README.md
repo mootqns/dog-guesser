@@ -1,7 +1,7 @@
 # CPSC332 Web Project Final | Dog Guesser
 
 ## Description
-This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from the Dog CEO API. This project's goal is to provide simple web-based fun for people aiming to expand their knowkedge on dogs in a exciting, and slightly compeitive way. 
+This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from the Dog CEO API. This project's goal is to provide simple web-based fun for people aiming to expand their knowledge on dogs in a exciting, and slightly competitive way. 
 
 ## Table of Contents
 1. [Installation](#installation)
