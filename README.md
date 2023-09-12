@@ -1,7 +1,7 @@
-# CPSC332 Web Project Final | Dog Guesser
+# Dog Guesser
 
 ## Description
-This repository contains the code for my CPSC332 Web Project Final- a kahoot like game with questions derived from the Dog CEO API. This project's goal is to provide simple web-based fun for people aiming to expand their knowledge on dogs in a exciting, and slightly competitive way. 
+This repository contains the code for a kahoot like game with questions derived from the Dog CEO API. This project's goal is to provide simple web-based fun for people aiming to expand their knowledge on dogs in a exciting, and slightly competitive way. 
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -26,9 +26,6 @@ image of a dog and different choices for the breed. Your goal is to guess the co
 correct answer, 50 points will be added to your score; there are no points losses for answering incorrectly. While in-game, you have 
 the option to start a timer to time how long it takes you to answer the questions. Further, in the top-right, your progress 
 throughout the quiz will be shown. Once completed, you can enter a username to store your score on the leaderboard! 
-
-## Contributing
-As this project serves as the final for my CPSC332 course contributions are not being accepted to avoid academic integrity policy issues
 
 ## Credits
 Author: Matt Nguyen  
