@@ -13,7 +13,7 @@ This repository contains the code for a kahoot like game with questions derived 
 ## Installation
 To install locally on Mac OS: 
 1. Clone this repository  
-`git clone https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-mootqns.git`
+`git clone https://github.com/mootqns/dog-guesser.git`
 2. Start MongoDB (see [here](https://www.mongodb.com/docs/manual/administration/install-community/) to install)  
 `brew services start mongodb-community`   
 3. Once cloned with MongoDB running, navigate to wpd/index.js (start point) and run  
